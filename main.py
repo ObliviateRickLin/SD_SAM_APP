@@ -31,7 +31,7 @@ add_bg_with_opacity('bg.jpg')
 st.title("Text-to-Image Diffusion")
 
 MODELS = {
-    "Model 1 based on dreambooth (recommended)": "https://api-inference.huggingface.co/models/JerryMo/dreambooth-simpsons",
+    "Model 1 based on dreambooth (recommended)": "https://api-inference.huggingface.co/models/JerryMo/db-simpsons",
     "Model 2 based on dreambooth (30-image one)": "https://api-inference.huggingface.co/models/JerryMo/db-simpsons-asim-style",
     "Model 3 based on Lora (also great)": "https://api-inference.huggingface.co/models/Foxintohumanbeing/simpson-lora"# for Lora
     # Add more models here
