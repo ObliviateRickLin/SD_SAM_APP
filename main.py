@@ -82,7 +82,7 @@ with c1:
 with c2: 
     if input_text:
         st.caption("The generated image：")
-        input_text += "asim style."
+        input_text += ". asim style."
         with st.spinner("Generally, the processing time for a single image ranges from a few seconds to two or three minutes."):
             generated_image = text_to_image(input_text)
         if generated_image is not None:
