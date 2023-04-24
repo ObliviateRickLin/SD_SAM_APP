@@ -4,6 +4,9 @@ from PIL import Image
 import io
 import requests
 import base64
+import os
+
+os.environ['CURL_CA_BUNDLE'] = ''
 
 st.set_page_config(
     page_title="Text-to-Image Diffusion",
@@ -31,10 +34,9 @@ add_bg_with_opacity('bg.jpg')
 st.title("Text-to-Image Diffusion")
 
 MODELS = {
-    "Model 1 (speed version)": "https://juq36lev0lish7wc.us-east-1.aws.endpoints.huggingface.cloud",
-    "Model 1 ": "https://api-inference.huggingface.co/models/JerryMo/db-simpsons",
-    "Model 2 based on dreambooth (30-image one)": "https://api-inference.huggingface.co/models/JerryMo/db-simpsons-asim-style",
-    "Model 3 based on Lora (also great)": "https://api-inference.huggingface.co/models/Foxintohumanbeing/simpson-lora"# for Lora
+    "Model 1 db": "https://api-inference.huggingface.co/models/JerryMo/db-simpsons",
+    "Model 2 db ": "https://api-inference.huggingface.co/models/JerryMo/db-simpsons-asim-style",
+    "Model 3 Lora ": "https://api-inference.huggingface.co/models/Foxintohumanbeing/simpson-lora"# for Lora
     # Add more models here
 }
 with st.expander("A brief introduction and announcement"):
@@ -77,7 +79,6 @@ def text_to_image(text):
 c1,c2 = st.columns((1,2))
 
 with c1:
-
     input_text = st.text_area("Input your prompt for image generation","Astronaut riding a horse",height=450,max_chars=150, help="Please enter ctrl+enter to apply")
 
 with c2: 
