@@ -34,7 +34,7 @@ add_bg_with_opacity('bg.jpg')
 st.title("Text-to-Image Diffusion")
 
 MODELS = {
-    "Model 1 db": "https://api-inference.huggingface.co/models/JerryMo/db-simpsons",
+    #"Model 1 db": "https://api-inference.huggingface.co/models/JerryMo/db-simpsons",
     "Model 2 db ": "https://api-inference.huggingface.co/models/JerryMo/db-simpsons-asim-style",
     "Model 3 Lora ": "https://api-inference.huggingface.co/models/Foxintohumanbeing/simpson-lora"# for Lora
     # Add more models here
