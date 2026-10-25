@@ -54,7 +54,12 @@ with st.expander("A brief introduction and announcement"):
 selected_model = st.selectbox("choose your model：", list(MODELS.keys()))
 
 API_URL = MODELS[selected_model]
-headers = {"Authorization": "Bearer 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"}
+# Supply a new, unexposed token through the runtime environment.
+hf_token = os.environ.get("HF_TOKEN", "").strip()
+if not hf_token:
+    st.error("Image generation is unavailable: set HF_TOKEN in the server environment.")
+    st.stop()
+headers = {"Authorization": f"Bearer {hf_token}"}
 
 def query(payload):
     response = requests.post(API_URL, headers=headers, json=payload)
